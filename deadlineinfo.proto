@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package = "github.com/lupinthe14th/deadlineinfo";
+
+
+package deadlineinfo;
+import "date.proto";
+
+message GetRequest {
+  google.type.Date date = 1;
+}
+
+message GetResponse {
+  google.type.Date date = 1;
+}
+
+service Deadlineinfo {
+  rpc Get(GetRequest) returns (GetResponse) {}
+}
